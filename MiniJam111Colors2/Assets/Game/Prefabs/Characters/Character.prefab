@@ -195,7 +195,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 87
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -251,7 +251,9 @@ GameObject:
   - component: {fileID: 7464432111326188183}
   - component: {fileID: 4981541244037407543}
   - component: {fileID: 4847030604233058188}
-  - component: {fileID: 296440636074198203}
+  - component: {fileID: 7887246965527398571}
+  - component: {fileID: 929986404984165500}
+  - component: {fileID: 6082093084793716355}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -290,7 +292,8 @@ MonoBehaviour:
   meshRenderer: {fileID: 7332916595710355869}
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
   texCam: {fileID: 2335098117953800975}
-  errorMargin: 0.3
+  isSameColor: 0
+  errorMargin: 0.25
 --- !u!54 &4847030604233058188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -307,7 +310,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &296440636074198203
+--- !u!114 &7887246965527398571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,6 +319,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7464432111326188171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84dde1de76cf1f4f8aacc81663b10e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 97fb4e15d9d7b0047acfa5149186ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 7332916595710355869}
+  resistance: 1
+--- !u!114 &929986404984165500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464432111326188171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef99eb51a99fb04ea7b9aa5233133b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!136 &6082093084793716355
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464432111326188171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

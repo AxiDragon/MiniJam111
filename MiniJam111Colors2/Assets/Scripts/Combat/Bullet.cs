@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float destroyTime = 10f;
     [SerializeField] float speed = 1f;
+    [SerializeField] float attackDamage = 2f;
     [SerializeField] GameObject hitEffect;
     Material bulletMaterial;
     
@@ -30,16 +31,28 @@ public class Bullet : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(transform.forward * speed);
+        transform.Translate(transform.forward * speed, Space.World);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider coll)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (coll.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(hitEffect);
-            //change hit enemy color
+            if (hitEffect != null)
+                Instantiate(hitEffect);
+
+            if (coll.TryGetComponent<ColorChange>(out ColorChange colorChange))
+            {
+                colorChange.BlendColor(bulletMaterial.color, attackDamage);
+            }
+
             Destroy(gameObject);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * speed);
     }
 }

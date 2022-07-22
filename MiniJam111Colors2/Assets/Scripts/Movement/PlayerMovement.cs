@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float decelerationRate = 5f;
 
-    Vector3 moveVector;
+    Vector3 moveVector; 
+    Vector2 input;
 
     void Awake()
     {
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext callback)
     {
-        Vector2 input = callback.action.ReadValue<Vector2>().normalized;
+        input = callback.action.ReadValue<Vector2>().normalized;
         moveVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(input.x, 0f, input.y);
     }
 

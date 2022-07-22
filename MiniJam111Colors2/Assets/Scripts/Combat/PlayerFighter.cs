@@ -7,16 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerFighter : MonoBehaviour
 {
     [SerializeField] Bullet bulletPrefab;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField] Color testColor;
 
     public void Attack(InputAction.CallbackContext callback)
     {
@@ -28,7 +19,9 @@ public class PlayerFighter : MonoBehaviour
 
     private void ShootBullet()
     {
-        Bullet shotBullet = Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
-        shotBullet.transform.LookAt(transform.forward);
+        Vector3 forwardDirection = transform.forward;
+        Bullet shotBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
+        shotBullet.SetColor(testColor);
+        //shotBullet.transform.LookAt(transform.position + forwardDirection);
     }
 }

@@ -10,6 +10,7 @@ public class ColorCheck : MonoBehaviour
     [SerializeField] Camera texCam;
     Material material;
     RenderTexture rt;
+    [HideInInspector] public bool isSameColor;
     
     [SerializeField] float errorMargin = 0.1f;
 
@@ -37,11 +38,8 @@ public class ColorCheck : MonoBehaviour
     {
         Color newColor = GetColor();
         Vector3 difference = (Vector4)(material.color - newColor);
-        if (difference.sqrMagnitude < errorMargin)
-        {
-            //subtract health and other effects
-            Debug.Log("IM DYING!!!");
-        }
+
+        isSameColor = difference.sqrMagnitude < errorMargin;
     }
 
     private Color GetColor()
