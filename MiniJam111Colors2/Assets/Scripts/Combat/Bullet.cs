@@ -5,11 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float destroyTime = 10f;
-    [SerializeField] float speed = 1f;
-    [SerializeField] float attackDamage = 2f;
     [SerializeField] GameObject hitEffect;
-    Material bulletMaterial;
+    public string faction;
+    [HideInInspector] public float attackDamage = 2f;
+    [HideInInspector] public float speed = 1f;
     
+    Material bulletMaterial;
+
     void Awake()
     {
         GetMaterial();
@@ -36,7 +38,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.CompareTag("Enemy"))
+        if (!coll.gameObject.CompareTag(faction))
         {
             if (hitEffect != null)
                 Instantiate(hitEffect);
@@ -48,11 +50,5 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * speed);
     }
 }

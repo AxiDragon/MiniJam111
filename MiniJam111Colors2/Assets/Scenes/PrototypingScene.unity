@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.6
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.2
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -509,6 +509,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7090853980188360177, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2debbd3c797dee74cbc4bb65efb29df2, type: 2}
+    - target: {fileID: 7090853980188360177, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e97df4116a7f7c545aa207196d7c18e5, type: 2}
+    - target: {fileID: 7449755345103609411, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449755345103609411, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449755345103609411, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7995345320255301984, guid: 9534b970d86a6e04aa8e566128c2ffd5,
         type: 3}
       propertyPath: speed
@@ -587,6 +612,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4375012096713166959, guid: 7ad4a330093abd74dad3e8620e0f37a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4375012096713166963, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -655,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375012096713166959, guid: 7ad4a330093abd74dad3e8620e0f37a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375012096713166963, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}

@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float health;
+    [SerializeField] UnityEvent die;
     ColorCheck colorchecker;
     float maxHealth;
 
@@ -48,6 +50,9 @@ public class Health : MonoBehaviour
         {
             coll.enabled = false;
         }
+
+        die.Invoke();
+
         Destroy(gameObject, 2f);
     }
 }

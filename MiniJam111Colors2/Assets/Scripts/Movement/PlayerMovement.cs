@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateMovement()
     {
         bool grounded = OnGround();
+
+        moveVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(input.x, 0f, input.y);
+
         if (Mathf.Approximately(moveVector.magnitude, 0f) && grounded)
         {
             Vector3 deceleration = new Vector3(rb.velocity.x, 0f, rb.velocity.z) 
@@ -62,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext callback)
     {
         input = callback.action.ReadValue<Vector2>().normalized;
-        moveVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(input.x, 0f, input.y);
     }
 
     public void Jump(InputAction.CallbackContext callback)

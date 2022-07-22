@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float chaseDistance = 12f;
+    [SerializeField] float speed = 3.5f;
+    bool alive = true;
     NavMeshAgent agent;
     Transform player;
 
@@ -16,19 +18,30 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
     }
 
+    private void Start()
+    {
+        agent.speed = speed;
+    }
+
     void Update()
     {
-        print(CheckDistanceToPlayer());
-        if (CheckDistanceToPlayer())
+        if (!alive)
+            return;
+
+        if (CheckIsInChaseDistance())
         {
-            agent.isStopped = false;
             agent.SetDestination(player.position);
         }
     }
 
-    private bool CheckDistanceToPlayer()
+    private bool CheckIsInChaseDistance()
     {
         float distance = Vector3.Distance(player.position, transform.position);
         return distance < chaseDistance;
+    }
+
+    public void Die()
+    {
+        alive = false;
     }
 }

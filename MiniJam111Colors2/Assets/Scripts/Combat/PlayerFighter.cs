@@ -6,22 +6,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerFighter : MonoBehaviour
 {
-    [SerializeField] Bullet bulletPrefab;
-    [SerializeField] Color testColor;
+    [SerializeField] float attackDamage = 1.5f;
+    [SerializeField] float attackSpeed = 1f;
+    [SerializeField] Color attackColor;
+    [SerializeField] Transform cameraTransform;
+    IAttack attack;
+
+    private void Awake()
+    {
+        attack = GetComponent<IAttack>();
+    }
 
     public void Attack(InputAction.CallbackContext callback)
     {
         if (callback.action.WasPerformedThisFrame())
         {
-            ShootBullet();
+            attack.Attack(attackDamage, attackSpeed, attackColor, cameraTransform, tag);
         }
-    }
-
-    private void ShootBullet()
-    {
-        Vector3 forwardDirection = transform.forward;
-        Bullet shotBullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
-        shotBullet.SetColor(testColor);
-        //shotBullet.transform.LookAt(transform.position + forwardDirection);
     }
 }

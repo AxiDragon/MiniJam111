@@ -10,13 +10,13 @@ public class ColorCheck : MonoBehaviour
     [SerializeField] Camera texCam;
     Material material;
     RenderTexture rt;
-    [HideInInspector] public bool isSameColor;
     
+    [HideInInspector] public bool isSameColor;
     [SerializeField] float errorMargin = 0.1f;
 
     void Start()
     {
-        material = meshRenderer.material;
+        material = meshRenderer.materials[0];
 
         rt = new RenderTexture(textureSettings);
         rt.Create();

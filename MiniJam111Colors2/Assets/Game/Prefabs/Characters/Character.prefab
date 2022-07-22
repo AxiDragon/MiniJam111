@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 7887246965527398571}
   - component: {fileID: 929986404984165500}
   - component: {fileID: 6082093084793716355}
+  - component: {fileID: 5677847359904990528}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -337,6 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  die:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &6082093084793716355
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -351,3 +355,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5677847359904990528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464432111326188171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36891d6fa3dbf9c46988fc31f2be4862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2002811603138692281, guid: e99186f29f668bd43921f7b54eca3762,
+    type: 3}
+  testColor: {r: 0.28627452, g: 0.8862746, b: 0.36862746, a: 1}
