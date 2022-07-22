@@ -130,6 +130,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5375492951125141332, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7464432111326188171, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Name
@@ -200,6 +205,165 @@ PrefabInstance:
 --- !u!4 &2494152393342045853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2094867285854878923, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4580007789541241430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4292598817193277165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 296440636074198203, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4580007789541241430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348256493292052701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84dde1de76cf1f4f8aacc81663b10e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6348256493292052701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7464432111326188171, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4580007789541241430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2265493276045958496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348256493292052701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 261e7a5ab3715274b8bd9b5635f90632,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4292598817193277165}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc4ed2f6-d0dd-4306-b422-6d5fca0ba8b3
+    m_ActionName: Player/Shoot[/Mouse/rightButton,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7995345320255301984}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fe906de1-178c-4d30-a676-0087d2752ee5
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7995345320255301984}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3cdc4b94-809d-4109-bddc-9bb55745d70e
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 87b97150-abde-4f36-a460-dbcfc9897a8b
+    m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8595939040522498352}
+        m_TargetAssemblyTypeName: CameraLook, Assembly-CSharp
+        m_MethodName: MoveCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f05cb64-7d56-415f-a289-8ddd8222da7a
+    m_ActionName: Player/CameraMove[/Mouse/delta]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &7995345320255301984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348256493292052701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1358ca3a910f04b8e027d87fa09ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 8521242158859016265}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheckDistance: 0.1
+  jumpForce: 5
+  airSpeed: 1
+  speed: 15
+  maxSpeed: 10
+  decelerationRate: 5
+--- !u!114 &8595939040522498352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348256493292052701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4315438ae89b64d9d97a2d182e2d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 0.5
+  cameraTransform: {fileID: 8148147145772517897}
+--- !u!1 &8521242158859016265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
     type: 3}
   m_PrefabInstance: {fileID: 4580007789541241430}
   m_PrefabAsset: {fileID: 0}
