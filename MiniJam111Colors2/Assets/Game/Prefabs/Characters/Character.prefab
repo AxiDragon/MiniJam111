@@ -272,3 +272,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 7332916595710355869}
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
+  texCam: {fileID: 2335098117953800975}
+  errorMargin: 0.3

@@ -10,6 +10,8 @@ public class ColorCheck : MonoBehaviour
     [SerializeField] Camera texCam;
     Material material;
     RenderTexture rt;
+    
+    [SerializeField] float errorMargin = 0.1f;
 
     void Start()
     {
@@ -28,17 +30,29 @@ public class ColorCheck : MonoBehaviour
 
     void Update()
     {
-        UpdateColor(textureSettings);
+        CheckColor();
     }
 
-    private void UpdateColor(RenderTexture rt)
+    private void CheckColor()
     {
-        Texture2D convertedTexture = ConvertToTexture2D(rt);
-        Color newColor = convertedTexture.GetPixel(0,0);
-        material.color = newColor;
+        Color floorColor = GetColor();
+        Vector3 difference = (Vector4)(material.color - floorColor);
+        //Debug.Log(difference.sqrMagnitude);
+        if (difference.sqrMagnitude < errorMargin)
+        {
+            //subtract health and other effects
+            Debug.Log("IM DYING!!!");
+        }
     }
 
-    private Texture2D ConvertToTexture2D(RenderTexture rt)
+    private Color GetColor()
+    {
+        Texture2D convertedTexture = ConvertToTexture2D();
+        Color newColor = convertedTexture.GetPixel(0, 0);
+        return newColor;
+    }
+
+    private Texture2D ConvertToTexture2D()
     {
         Texture2D texture = new Texture2D(rt.width, rt.height);
         RenderTexture.active = rt;
