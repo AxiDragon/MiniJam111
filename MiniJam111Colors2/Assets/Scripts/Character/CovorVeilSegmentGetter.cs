@@ -15,12 +15,31 @@ public class CovorVeilSegmentGetter : MonoBehaviour
                 veilSegments.Add(segment);
             }
         }
-        print(transform.rotation.y);
-        //Red 30 : 330, Orange 330 : 270, Yellow 270 : 210, Green 210 : 150, Blue 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GetCovorVeilSegment().Launch();
+        }
     }
 
     public CovorVeilSegment GetCovorVeilSegment()
     {
-        return null;
+        float rotation = transform.localEulerAngles.y;
+        //Red 30 : 330, Orange 330 : 270, Yellow 270 : 210, Green 210 : 150, Blue 150 : 90, Purple 90 : 30
+
+        for (int i = 0; i < veilSegments.Count; i++)
+        {
+            float checkRotation = 30f + i * 60f;
+            
+            if (checkRotation <= rotation)
+                continue;
+        
+            return veilSegments[i];
+        }
+
+        return veilSegments[0];
     }
 }

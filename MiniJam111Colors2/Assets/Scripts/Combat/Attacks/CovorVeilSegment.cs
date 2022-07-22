@@ -6,24 +6,33 @@ public class CovorVeilSegment : MonoBehaviour
 {
     [HideInInspector] public float attackDamage = 2f;
     [HideInInspector] public Color attackColor;
-    [SerializeField] GameObject hitEffect;
+    [SerializeField] HitParticle hitEffect;
+    MeshRenderer rend;
+    Transform owner;
     Transform parent;
     bool attacking = false;
-    float attackTime = 1f;
-    float attackSpeed = 15f;
-    float attackCooldown = 2f;
+    public float attackTime = .5f;
+    public float attackSpeed = 120f;
+    public float attackCooldown = 2f;
+    float startYRotation;
 
     IEnumerator attackRoutine;
 
-    void Start()
+    void Awake()
     {
-        parent = transform.parent;
-        attackColor = GetComponent<MeshRenderer>().material.color;
+        owner = GameObject.FindWithTag("Player").transform;
+        rend = GetComponent<MeshRenderer>();
+        attackColor = rend.material.color;
     }
 
+    private void Start()
+    {
+        parent = transform.parent;
+        startYRotation = transform.localEulerAngles.y;
+    }
     void Update()
     {
-        
+
     }
 
     [ContextMenu("Launch")]
@@ -38,7 +47,7 @@ public class CovorVeilSegment : MonoBehaviour
         transform.parent = null;
         attacking = true;
         float timer = 0f;
-     
+
         while (timer < attackTime)
         {
             transform.localScale += Vector3.right * Time.deltaTime * attackSpeed;
@@ -52,20 +61,26 @@ public class CovorVeilSegment : MonoBehaviour
 
     IEnumerator SegmentCooldown()
     {
-        transform.parent = parent;
-        transform.localPosition = Vector3.zero;
-        transform.localScale = Vector3.zero;
+        ResetSegment();
         yield return new WaitForSeconds(attackCooldown);
-        yield return LeanTween.scale(gameObject, Vector3.one, 12f).setEase(LeanTweenType.easeInElastic);
+        rend.enabled = true;
+        yield return LeanTween.scale(gameObject, Vector3.one, 1f).setEase(LeanTweenType.easeOutSine);
+    }
+
+    private void ResetSegment()
+    {
+        transform.parent = parent;
+        transform.localEulerAngles = Vector3.up * startYRotation;
+        transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one * 0.01f;
+        rend.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && attacking)
+        print(other.name);
+        if (!other.CompareTag("Player") && attacking)
         {
-            if (hitEffect != null)
-                Instantiate(hitEffect);
-
             if (other.TryGetComponent<ColorChange>(out ColorChange colorChange))
             {
                 colorChange.BlendColor(attackColor, attackDamage);
@@ -76,7 +91,15 @@ public class CovorVeilSegment : MonoBehaviour
                 StopCoroutine(attackRoutine);
             }
 
+            Vector3 hitPosition = other.ClosestPointOnBounds(transform.position);
+            SpawnParticle(hitPosition);
             StartCoroutine(SegmentCooldown());
         }
+    }
+ 
+    void SpawnParticle(Vector3 spawnPos)
+    {
+        HitParticle particle = Instantiate(hitEffect, spawnPos, Quaternion.identity);
+        particle.Activate(attackColor);
     }
 }

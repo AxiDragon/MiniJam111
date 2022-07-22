@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float destroyTime = 10f;
-    [SerializeField] GameObject hitEffect;
+    [SerializeField] HitParticle hitEffect;
     public string faction;
     [HideInInspector] public float attackDamage = 2f;
     [HideInInspector] public float speed = 1f;
@@ -40,15 +40,20 @@ public class Bullet : MonoBehaviour
     {
         if (!coll.gameObject.CompareTag(faction))
         {
-            if (hitEffect != null)
-                Instantiate(hitEffect);
-
             if (coll.TryGetComponent<ColorChange>(out ColorChange colorChange))
             {
                 colorChange.BlendColor(bulletMaterial.color, attackDamage);
             }
 
+            Vector3 hitPosition = coll.ClosestPointOnBounds(transform.position);
+            SpawnParticle(hitPosition);
             Destroy(gameObject);
         }
+    }
+
+    void SpawnParticle(Vector3 spawnPos)
+    {
+        HitParticle particle = Instantiate(hitEffect, spawnPos, Quaternion.identity);
+        particle.Activate(bulletMaterial.color);
     }
 }

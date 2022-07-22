@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 5
-  speed: 1
+  hitEffect: {fileID: 61595482913440415, guid: 93c41d0c35a973647b9b43a2cb235a48, type: 3}
+  faction: 
   attackDamage: 1.1
-  hitEffect: {fileID: 0}
+  speed: 1

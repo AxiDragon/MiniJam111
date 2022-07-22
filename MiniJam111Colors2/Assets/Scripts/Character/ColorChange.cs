@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ColorChange : MonoBehaviour
 {
-    [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] Renderer meshRenderer;
     [SerializeField] float resistance = 1f;
+    [SerializeField] Color startingColor = Color.white;
     Material material;
     IEnumerator runningTransition;
     bool transitioning = false;
 
     void Awake()
     {
-        material = meshRenderer.material;
+        material = meshRenderer.materials[0];
+        material.color = startingColor;
     }
 
     public void BlendColor(Color blendColor, float share)

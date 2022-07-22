@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ColorCheck : MonoBehaviour
 {
-    [SerializeField] Renderer meshRenderer;
+    [SerializeField] Renderer rend;
     [SerializeField] RenderTexture textureSettings;
     [SerializeField] Camera texCam;
     Material material;
@@ -16,7 +16,7 @@ public class ColorCheck : MonoBehaviour
 
     void Start()
     {
-        material = meshRenderer.materials[0];
+        material = rend.materials[0];
 
         rt = new RenderTexture(textureSettings);
         rt.Create();
