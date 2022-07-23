@@ -38,41 +38,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ac10317c-26a5-4a5f-9a13-b34fb0683b3c",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "UI",
-                    "action": "Advance",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e22e7129-8aed-43de-b3b3-4cde67e425cf",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "UI",
-                    "action": "Advance",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4dc0c31f-a480-4839-8f62-79f6662a0cd2",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "UI",
-                    "action": "Retract",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "14b1f739-274a-449e-924a-1af0abffd79e",
-                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "UI",

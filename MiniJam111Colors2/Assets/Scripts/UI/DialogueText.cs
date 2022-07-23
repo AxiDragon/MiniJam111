@@ -15,12 +15,14 @@ public class DialogueText : MonoBehaviour
     [SerializeField] UnityEvent finishEvent;
     [SerializeField] float characterInterval = .05f;
     RectTransform rectTransform;
-    Vector3 displayed;
-    Vector3 hidden;
+    RectTransform displayTransform;
+    RectTransform hideTransform;
     int currentDialogue = 0;
     int dialogueLength;
     IEnumerator timer;
     IEnumerator textTyper;
+
+    Action closeAction;
 
     [Serializable]
     struct DialogueSegment
@@ -40,12 +42,15 @@ public class DialogueText : MonoBehaviour
 
     private void Awake()
     {
+        closeAction = () => { gameObject.SetActive(false); };
         dialogueLength = dialogue.Length;
         rectTransform = GetComponent<RectTransform>();
-        displayed = rectTransform.position;
-        hidden = displayed - Vector3.up * 300f;
+        print(rectTransform);
+        displayTransform = rectTransform;
+        hideTransform = displayTransform;
+        hideTransform.position -= Vector3.one * 200f;
 
-        rectTransform.position = hidden;
+        rectTransform = hideTransform;
 
         ShowDialogue();
         DisplayText();
@@ -55,6 +60,9 @@ public class DialogueText : MonoBehaviour
     {
         if (textTyper != null)
             StopCoroutine(textTyper);
+
+        if (currentDialogue >= dialogueLength)
+            return;
 
         DialogueSegment dialogueSegment = dialogue[currentDialogue];
         title.text = dialogueSegment.character.ToString();
@@ -90,19 +98,22 @@ public class DialogueText : MonoBehaviour
             dialogue[currentDialogue].advanceEvent.Invoke();
             currentDialogue--;
             
-            ClampIndex();
-            DisplayText();
+            if (ClampIndex())
+                DisplayText();
         }
     }
 
-    private void ClampIndex()
+    private bool ClampIndex()
     {
         if (currentDialogue >= dialogueLength)
         {
             finishEvent.Invoke();
+            return false;
         }
-        
+
         currentDialogue = Mathf.Clamp(currentDialogue, 0, dialogueLength - 1);
+
+        return true;
     }
 
     public void AdvanceTimer(float time)
@@ -135,11 +146,11 @@ public class DialogueText : MonoBehaviour
 
     public void CloseDialogue()
     {
-        LeanTween.move(rectTransform, hidden, 1f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.move(rectTransform, hideTransform.position, 1f).setEase(LeanTweenType.easeInOutCubic).setOnComplete(closeAction);
     }
 
     public void ShowDialogue()
     {
-        LeanTween.move(rectTransform, displayed, 1f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.move(rectTransform, displayTransform.position, 1f).setEase(LeanTweenType.easeInOutCubic);
     }
 }
