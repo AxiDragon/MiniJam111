@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class LightHouseEntrance : MonoBehaviour
 {
     [SerializeField] int targetScene;
+    bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (triggered)
+            return;
+
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(targetScene);
+            triggered = true;   
+            StartCoroutine(FindObjectOfType<SceneFade>().Fade(1f, targetScene));
         }
     }
 }

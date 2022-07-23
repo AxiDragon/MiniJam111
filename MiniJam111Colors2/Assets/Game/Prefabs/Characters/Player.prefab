@@ -278,6 +278,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.048
       objectReference: {fileID: 0}
+    - target: {fileID: 2335098117953800975, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: far clip plane
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3165356415147938850, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_TagString
@@ -388,6 +393,11 @@ PrefabInstance:
       propertyPath: rend
       value: 
       objectReference: {fileID: 7090853980188360177}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: resistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: meshRenderer
@@ -557,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee43a2ba18a62f4d87db056a02f471a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yThreshold: 25
+  yThreshold: -15
 --- !u!114 &5456992912532354565
 MonoBehaviour:
   m_ObjectHideFlags: 0

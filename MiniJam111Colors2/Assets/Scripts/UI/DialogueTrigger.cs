@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] DialogueText dialogue;
+    [SerializeField] string triggerTag = "Player";
     bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour
         if (triggered)
             return;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(triggerTag))
         {
             dialogue.gameObject.SetActive(true);
             dialogue.ShowDialogue();

@@ -17,7 +17,6 @@ public class ColorCheck : MonoBehaviour
     void Start()
     {
         material = GetColorable();
-        print(material.name);
 
         rt = new RenderTexture(textureSettings);
         rt.Create();
@@ -38,10 +37,19 @@ public class ColorCheck : MonoBehaviour
     private void CheckColor()
     {
         Color newColor = GetColor();
-        Vector3 difference = (Vector4)(material.color - newColor);
 
-        print(difference.magnitude);
-        isSameColor = difference.magnitude < errorMargin; 
+        float difference = GetDifference(newColor, material.color);
+        print(difference);
+        isSameColor = difference < errorMargin; 
+    }
+
+    private float GetDifference(Color c1, Color c2)
+    {
+        float redDif = Mathf.Abs(c1.r - c2.r);
+        float greenDif = Mathf.Abs(c1.g - c2.g);
+        float blueDif = Mathf.Abs(c1.b - c2.b);
+
+        return redDif + greenDif + blueDif;
     }
 
     private Color GetColor()

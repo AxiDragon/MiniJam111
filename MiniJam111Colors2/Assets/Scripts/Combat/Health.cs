@@ -33,6 +33,7 @@ public class Health : MonoBehaviour
     private void TakeDamage(float amount)
     {
         health -= amount;
+        print("Ouchie!");
         if (health <= 0 && !immortal)
         {
             health = 0;

@@ -69,7 +69,19 @@ public class EnemyMovement : MonoBehaviour
     private bool CheckIsInChaseDistance()
     {
         float distance = Vector3.Distance(player.position, transform.position);
-        return distance < chaseDistance;
+
+        if (distance > chaseDistance)
+            return false;
+        else
+            return true;
+
+        //RaycastHit hit;
+        //if (Physics.Raycast(player.position, transform.position, out hit, chaseDistance))
+        //{
+        //    return hit.collider.CompareTag("Player");
+        //}
+
+        //return false;
     }
 
     public void Alerted()
@@ -82,7 +94,7 @@ public class EnemyMovement : MonoBehaviour
         alive = false;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, chaseDistance);

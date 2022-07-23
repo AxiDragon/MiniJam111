@@ -175,7 +175,7 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 2
+  m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_SensorSize: {x: 1, y: 1}
@@ -188,10 +188,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 5
+  far clip plane: 25
   field of view: 1.9224968
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 0.02
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
   texCam: {fileID: 2335098117953800975}
   isSameColor: 0
-  errorMargin: 0.5
+  errorMargin: 0.7
 --- !u!54 &4847030604233058188
 Rigidbody:
   m_ObjectHideFlags: 0

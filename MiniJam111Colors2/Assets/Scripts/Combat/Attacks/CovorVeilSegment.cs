@@ -11,9 +11,6 @@ public class CovorVeilSegment : MonoBehaviour
     Transform owner;
     Transform parent;
     bool attacking = false;
-    bool immune = false;
-    public float immunityTime = .2f;
-    float immunityTimer = 0f;
     public float attackTime = .5f;
     public float attackSpeed = 120f;
     public float attackCooldown = 2f;
@@ -62,7 +59,6 @@ public class CovorVeilSegment : MonoBehaviour
     IEnumerator LaunchSegment()
     {
         PreparePosition();
-        StartCoroutine(ImmunityTimer());
 
         attacking = true;
         float timer = 0f;
@@ -75,20 +71,6 @@ public class CovorVeilSegment : MonoBehaviour
         }
 
         yield return SegmentCooldown();
-    }
-
-    IEnumerator ImmunityTimer()
-    {
-        immune = true;
-        immunityTimer = 0f;
-
-        while (immunityTimer < immunityTime)
-        {
-            immunityTimer += Time.deltaTime;
-            yield return null;
-        }
-        
-        immune = false;
     }
 
     private void PreparePosition()

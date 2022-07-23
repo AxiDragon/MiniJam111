@@ -6,6 +6,7 @@ public class HitParticle : MonoBehaviour
 {
     public void Activate(Color particleColor)
     {
+        particleColor.a = 1f;
         ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
         ParticleSystem.MainModule settings = particle.main;
         settings.startColor = new ParticleSystem.MinMaxGradient(particleColor);

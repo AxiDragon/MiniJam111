@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 929986404984165500, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: health
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 929986404984165500, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
@@ -87,11 +87,6 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 2000
       objectReference: {fileID: 0}
-    - target: {fileID: 4981541244037407543, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 4531210478874798969}
     - target: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_TagString
@@ -226,6 +221,7 @@ MonoBehaviour:
   attackCooldown: 1
   projectileSpeed: 0.2
   range: 5
+  hasEvent: 1
 --- !u!195 &2853042577121487413
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -263,9 +259,3 @@ MonoBehaviour:
   chaseDistance: 12
   wanderRadius: 5
   wanderTime: 10
---- !u!23 &4531210478874798969 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7332916595710355869, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 6566766292127040228}
-  m_PrefabAsset: {fileID: 0}

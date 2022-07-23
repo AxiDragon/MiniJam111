@@ -71,4 +71,10 @@ public class ColorChange : MonoBehaviour
 
         return rend.material;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = startingColor;
+        Gizmos.DrawSphere(transform.position + Vector3.up * 3f, .5f);
+    }
 }
