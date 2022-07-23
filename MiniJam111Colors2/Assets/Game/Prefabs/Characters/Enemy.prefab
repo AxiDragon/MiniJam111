@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 929986404984165500, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: health
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 929986404984165500, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3165356415147938850, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4847030604233058188, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Mass
@@ -87,6 +92,16 @@ PrefabInstance:
       propertyPath: rend
       value: 
       objectReference: {fileID: 4531210478874798969}
+    - target: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499290217606872243, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7464432111326188171, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Name
@@ -152,6 +167,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5954786331380181262}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Alerted
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EnemyMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 524bf05ee28e29d43bd29ae6a8c934e3, type: 3}
 --- !u!1 &4375012096713166959 stripped
@@ -175,7 +225,6 @@ MonoBehaviour:
   attackDamage: 1
   attackCooldown: 1
   projectileSpeed: 0.2
-  attackColor: {r: 0, g: 0, b: 0, a: 0}
   range: 5
 --- !u!195 &2853042577121487413
 NavMeshAgent:
@@ -212,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 12
+  wanderRadius: 5
+  wanderTime: 10
 --- !u!23 &4531210478874798969 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7332916595710355869, guid: 524bf05ee28e29d43bd29ae6a8c934e3,

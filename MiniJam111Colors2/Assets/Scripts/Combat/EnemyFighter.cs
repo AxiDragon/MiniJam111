@@ -8,7 +8,8 @@ public class EnemyFighter : MonoBehaviour
     [SerializeField] float attackDamage = 1f;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] float projectileSpeed = .2f;
-    [SerializeField] Color attackColor;
+    ColorCheck checkColor;
+    Animator animator;
     public float range = 5f;
     float timeSinceLastAttack = Mathf.Infinity;
     IAttack attack;
@@ -17,6 +18,8 @@ public class EnemyFighter : MonoBehaviour
 
     private void Awake()
     {
+        checkColor = GetComponent<ColorCheck>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
         attack = GetComponent<IAttack>();
     }
@@ -25,7 +28,8 @@ public class EnemyFighter : MonoBehaviour
     {
         if (CheckIsInRange() && timeSinceLastAttack > attackCooldown)
         {
-            attack.Attack(attackDamage, projectileSpeed, attackColor, transform, tag);
+            animator.SetTrigger("Attack");
+            attack.Attack(attackDamage, projectileSpeed, checkColor.GetMaterialColor(), transform, tag);
             timeSinceLastAttack = 0f;
         }
 
@@ -43,4 +47,9 @@ public class EnemyFighter : MonoBehaviour
         return distance < range;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 }

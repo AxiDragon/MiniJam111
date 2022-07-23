@@ -16,7 +16,7 @@ public class ColorCheck : MonoBehaviour
 
     void Start()
     {
-        material = rend.material;
+        material = GetColorable();
         print(material.name);
 
         rt = new RenderTexture(textureSettings);
@@ -40,7 +40,8 @@ public class ColorCheck : MonoBehaviour
         Color newColor = GetColor();
         Vector3 difference = (Vector4)(material.color - newColor);
 
-        isSameColor = difference.sqrMagnitude < errorMargin; 
+        print(difference.magnitude);
+        isSameColor = difference.magnitude < errorMargin; 
     }
 
     private Color GetColor()
@@ -51,6 +52,11 @@ public class ColorCheck : MonoBehaviour
         return newColor;
     }
 
+    public Color GetMaterialColor()
+    {
+        return material.color;
+    }
+
     private Texture2D ConvertToTexture2D()
     {
         Texture2D texture = new Texture2D(rt.width, rt.height);
@@ -59,5 +65,17 @@ public class ColorCheck : MonoBehaviour
         texture.Apply();
         RenderTexture.active = null;
         return texture;
+    }
+
+    private Material GetColorable()
+    {
+        foreach(Material mat in rend.materials)
+        {
+            if(mat.name.Contains("Colorable"))
+            {
+                return mat;
+            }
+        }
+        return rend.material;
     }
 }

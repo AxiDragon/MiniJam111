@@ -295,7 +295,7 @@ MonoBehaviour:
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
   texCam: {fileID: 2335098117953800975}
   isSameColor: 0
-  errorMargin: 0.25
+  errorMargin: 0.5
 --- !u!54 &4847030604233058188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -324,9 +324,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fb4e15d9d7b0047acfa5149186ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 7332916595710355869}
-  resistance: 1
-  startingColor: {r: 1, g: 1, b: 1, a: 0}
+  rend: {fileID: 0}
+  resistance: 0.1
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
+  colorChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &929986404984165500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +346,7 @@ MonoBehaviour:
   die:
     m_PersistentCalls:
       m_Calls: []
+  immortal: 0
 --- !u!136 &6082093084793716355
 CapsuleCollider:
   m_ObjectHideFlags: 0

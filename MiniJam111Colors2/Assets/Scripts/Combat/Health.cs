@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float health;
     [SerializeField] UnityEvent die;
+    [SerializeField] bool immortal = false;
     ColorCheck colorchecker;
     float maxHealth;
 
@@ -32,11 +33,16 @@ public class Health : MonoBehaviour
     private void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0)
+        if (health <= 0 && !immortal)
         {
             health = 0;
             Die();
         }
+    }
+
+    public float GetHealthPercentage()
+    {
+        return health / maxHealth;
     }
 
     private void Heal(float amount)
@@ -44,7 +50,7 @@ public class Health : MonoBehaviour
         health = Mathf.Min(health + amount, maxHealth);
     }
 
-    private void Die()
+    public void Die()
     {
         foreach(Collider coll in GetComponentsInChildren<Collider>())
         {

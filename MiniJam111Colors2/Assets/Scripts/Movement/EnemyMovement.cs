@@ -22,23 +22,13 @@ public class EnemyMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player").transform;
-        if (TryGetComponent<Animator>(out animator))
-        {
-
-        }
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         if (!alive)
             return;
-
-        if(agent.destination != null)
-        {
-            float yRotation = transform.eulerAngles.y;
-            transform.LookAt(agent.destination);
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
-        }
 
         if (CheckIsInChaseDistance())
         {
@@ -49,8 +39,7 @@ public class EnemyMovement : MonoBehaviour
             Wander();
         }
 
-        if (animator)
-        animator.SetFloat("Speed", agent.velocity.magnitude);
+        animator.SetFloat("Speed", agent.velocity.magnitude * 2f);
     }
 
     private void Wander()
@@ -95,7 +84,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, chaseDistance);
     }
 }

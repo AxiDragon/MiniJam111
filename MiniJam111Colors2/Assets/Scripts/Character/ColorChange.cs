@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ColorChange : MonoBehaviour
 {
-    [SerializeField] Renderer meshRenderer;
+    [SerializeField] Renderer rend;
     [SerializeField] float resistance = 1f;
     [SerializeField] Color startingColor = Color.white;
+    [SerializeField] UnityEvent colorChanged;
     Material material;
     IEnumerator runningTransition;
     bool transitioning = false;
 
     void Awake()
     {
-        material = meshRenderer.materials[0];
+        material = GetColorable();
         material.color = startingColor;
     }
 
@@ -29,6 +31,8 @@ public class ColorChange : MonoBehaviour
 
         runningTransition = TransitionColor(matColor, newColor);
         StartCoroutine(runningTransition);
+
+        colorChanged.Invoke();
     }
 
     private void GetColorBlend(Color blendColor, float share, out Color matColor, out Color newColor)
@@ -53,5 +57,18 @@ public class ColorChange : MonoBehaviour
         }
 
         transitioning = false;
+    }
+
+    private Material GetColorable()
+    {
+        foreach (Material mat in rend.materials)
+        {
+            if (mat.name.Contains("Colorable"))
+            {
+                return mat;
+            }
+        }
+
+        return rend.material;
     }
 }

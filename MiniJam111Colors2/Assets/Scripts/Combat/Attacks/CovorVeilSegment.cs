@@ -118,13 +118,8 @@ public class CovorVeilSegment : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!attacking || immune)
-            return;
-
-        if (!other.CompareTag("Player") && !other.CompareTag("Covor Veil Segment"))
+        if (other.CompareTag("Enemy"))
         {
-            print(other.gameObject.name);
-
             if (other.TryGetComponent<ColorChange>(out ColorChange colorChange))
             {
                 colorChange.BlendColor(attackColor, attackDamage);

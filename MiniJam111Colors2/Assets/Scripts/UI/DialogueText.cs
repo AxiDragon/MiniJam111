@@ -52,8 +52,7 @@ public class DialogueText : MonoBehaviour
 
         rectTransform = hideTransform;
 
-        ShowDialogue();
-        DisplayText();
+        gameObject.SetActive(false);
     }
 
     private void DisplayText()
@@ -146,11 +145,12 @@ public class DialogueText : MonoBehaviour
 
     public void CloseDialogue()
     {
-        LeanTween.move(rectTransform, hideTransform.position, 1f).setEase(LeanTweenType.easeInOutCubic).setOnComplete(closeAction);
+        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * -300f, 1f).setEase(LeanTweenType.easeInOutCubic).setOnComplete(closeAction);
     }
 
     public void ShowDialogue()
     {
-        LeanTween.move(rectTransform, displayTransform.position, 1f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * 200f, 1f).setEase(LeanTweenType.easeInOutCubic);
+        DisplayText();
     }
 }
