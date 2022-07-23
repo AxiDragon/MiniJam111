@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AcrylicBombController
+  m_Controller: {fileID: 9100000, guid: bde18bf959795ed41a7decef3e7140c8, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -8454884075391667547, guid: ae299dd0b6bfb5f4291e2a13b5f22f4d,
+      type: 3}
+    m_OverrideClip: {fileID: 4693398828340863762, guid: c14fe2a9b9aa35f4bba3a4a7178f4407,
+      type: 3}
+  - m_OriginalClip: {fileID: -5187248419258813496, guid: ae299dd0b6bfb5f4291e2a13b5f22f4d,
+      type: 3}
+    m_OverrideClip: {fileID: 8737811978722243694, guid: c14fe2a9b9aa35f4bba3a4a7178f4407,
+      type: 3}
+  - m_OriginalClip: {fileID: 706840672763551224, guid: ae299dd0b6bfb5f4291e2a13b5f22f4d,
+      type: 3}
+    m_OverrideClip: {fileID: -7170901073982305809, guid: c14fe2a9b9aa35f4bba3a4a7178f4407,
+      type: 3}

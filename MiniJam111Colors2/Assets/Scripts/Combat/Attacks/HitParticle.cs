@@ -11,5 +11,6 @@ public class HitParticle : MonoBehaviour
         settings.startColor = new ParticleSystem.MinMaxGradient(particleColor);
 
         particle.Play();
+        Destroy(gameObject, 2f);
     }
 }

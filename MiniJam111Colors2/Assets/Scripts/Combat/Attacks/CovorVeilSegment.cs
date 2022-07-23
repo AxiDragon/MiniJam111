@@ -11,6 +11,9 @@ public class CovorVeilSegment : MonoBehaviour
     Transform owner;
     Transform parent;
     bool attacking = false;
+    bool immune = false;
+    public float immunityTime = .2f;
+    float immunityTimer = 0f;
     public float attackTime = .5f;
     public float attackSpeed = 120f;
     public float attackCooldown = 2f;
@@ -30,21 +33,37 @@ public class CovorVeilSegment : MonoBehaviour
         parent = transform.parent;
         startYRotation = transform.localEulerAngles.y;
     }
-    void Update()
-    {
 
+    public void SetColor(Color color)
+    {
+        rend.material.color = color;
+        attackColor = color;
     }
 
     [ContextMenu("Launch")]
-    public void Launch()
+    public void Launch(float attackDamage, float attackSpeed, Transform attackDirection)
     {
+        if (attacking)
+            return;
+
+        RefreshStats(attackDamage, attackSpeed, attackDirection);
+
         attackRoutine = LaunchSegment();
         StartCoroutine(attackRoutine);
     }
 
+    private void RefreshStats(float attackDamage, float attackSpeed, Transform attackDirection)
+    {
+        this.attackDamage = attackDamage;
+        this.attackSpeed = attackSpeed;
+        owner = attackDirection;
+    }
+
     IEnumerator LaunchSegment()
     {
-        transform.parent = null;
+        PreparePosition();
+        StartCoroutine(ImmunityTimer());
+
         attacking = true;
         float timer = 0f;
 
@@ -56,7 +75,27 @@ public class CovorVeilSegment : MonoBehaviour
         }
 
         yield return SegmentCooldown();
-        attacking = false;
+    }
+
+    IEnumerator ImmunityTimer()
+    {
+        immune = true;
+        immunityTimer = 0f;
+
+        while (immunityTimer < immunityTime)
+        {
+            immunityTimer += Time.deltaTime;
+            yield return null;
+        }
+        
+        immune = false;
+    }
+
+    private void PreparePosition()
+    {
+        transform.parent = owner;
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 90f, transform.localEulerAngles.z);
+        transform.parent = null;
     }
 
     IEnumerator SegmentCooldown()
@@ -65,6 +104,7 @@ public class CovorVeilSegment : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         rend.enabled = true;
         yield return LeanTween.scale(gameObject, Vector3.one, 1f).setEase(LeanTweenType.easeOutSine);
+        attacking = false;
     }
 
     private void ResetSegment()
@@ -78,9 +118,13 @@ public class CovorVeilSegment : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.name);
-        if (!other.CompareTag("Player") && attacking)
+        if (!attacking || immune)
+            return;
+
+        if (!other.CompareTag("Player") && !other.CompareTag("Covor Veil Segment"))
         {
+            print(other.gameObject.name);
+
             if (other.TryGetComponent<ColorChange>(out ColorChange colorChange))
             {
                 colorChange.BlendColor(attackColor, attackDamage);
@@ -96,7 +140,7 @@ public class CovorVeilSegment : MonoBehaviour
             StartCoroutine(SegmentCooldown());
         }
     }
- 
+
     void SpawnParticle(Vector3 spawnPos)
     {
         HitParticle particle = Instantiate(hitEffect, spawnPos, Quaternion.identity);

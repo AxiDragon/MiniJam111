@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 4981541244037407543, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 4531210478874798969}
     - target: {fileID: 7464432111326188171, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Name
@@ -207,3 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 12
+--- !u!23 &4531210478874798969 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7332916595710355869, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6566766292127040228}
+  m_PrefabAsset: {fileID: 0}

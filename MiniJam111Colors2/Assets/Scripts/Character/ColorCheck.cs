@@ -16,7 +16,8 @@ public class ColorCheck : MonoBehaviour
 
     void Start()
     {
-        material = rend.materials[0];
+        material = rend.material;
+        print(material.name);
 
         rt = new RenderTexture(textureSettings);
         rt.Create();
@@ -39,7 +40,7 @@ public class ColorCheck : MonoBehaviour
         Color newColor = GetColor();
         Vector3 difference = (Vector4)(material.color - newColor);
 
-        isSameColor = difference.sqrMagnitude < errorMargin;
+        isSameColor = difference.sqrMagnitude < errorMargin; 
     }
 
     private Color GetColor()

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Covor Veil Segment
   layers:
   - Default
   - TransparentFX

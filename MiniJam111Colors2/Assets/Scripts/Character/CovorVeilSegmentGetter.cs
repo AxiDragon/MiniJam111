@@ -17,14 +17,6 @@ public class CovorVeilSegmentGetter : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GetCovorVeilSegment().Launch();
-        }
-    }
-
     public CovorVeilSegment GetCovorVeilSegment()
     {
         float rotation = transform.localEulerAngles.y;

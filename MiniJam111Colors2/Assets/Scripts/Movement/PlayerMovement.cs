@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody rb;
     [SerializeField] GameObject groundCheck;
     [SerializeField] LayerMask mask;
     [SerializeField] float groundCheckDistance = 0.1f;
@@ -15,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float decelerationRate = 5f;
+    Rigidbody rb;
+    Animator animator;
 
     Vector3 moveVector; 
     Vector2 input;
@@ -22,17 +23,20 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         ClampVelocity();
         UpdateMovement();
+        UpdateAnimations();
     }
 
     private void UpdateMovement()
     {
         bool grounded = OnGround();
+        animator.SetBool("Grounded", grounded);
 
         moveVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(input.x, 0f, input.y);
 
@@ -48,7 +52,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveForce, ForceMode.Impulse);
         }
     }
-    
+
+    private void UpdateAnimations()
+    {
+        animator.SetFloat("Speed", rb.velocity.magnitude);
+    }
+
     private Vector3 ModifiedMovement(bool grounded)
     {
         Vector3 moveForce = grounded ? moveVector * speed : moveVector * airSpeed;
@@ -59,7 +68,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 clampedVelocity = Vector3.Scale(rb.velocity, new Vector3(1f, 0f, 1f));
         clampedVelocity = Vector3.ClampMagnitude(clampedVelocity, maxSpeed);
-        rb.velocity = new Vector3(clampedVelocity.x, rb.velocity.y, clampedVelocity.z);
+        float clampedUpwardsVelocity = Mathf.Min(rb.velocity.y, maxSpeed);
+        rb.velocity = new Vector3(clampedVelocity.x, clampedUpwardsVelocity, clampedVelocity.z);
     }
 
     public void Move(InputAction.CallbackContext callback)
@@ -80,5 +90,11 @@ public class PlayerMovement : MonoBehaviour
         bool canJump = Physics.CheckSphere(groundCheck.transform.position, 
             groundCheckDistance, mask);
         return canJump;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.transform.position, groundCheckDistance);
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7699400320024356395}
   m_Layer: 8
   m_Name: Covor Veil Segment
-  m_TagString: Untagged
+  m_TagString: Covor Veil Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   attackDamage: 2
   attackColor: {r: 0, g: 0, b: 0, a: 0}
   hitEffect: {fileID: 61595482913440415, guid: 93c41d0c35a973647b9b43a2cb235a48, type: 3}
+  immunityTime: 0.2
   attackTime: 0.5
   attackSpeed: 240
   attackCooldown: 2

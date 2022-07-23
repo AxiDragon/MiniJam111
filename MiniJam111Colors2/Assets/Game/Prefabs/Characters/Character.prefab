@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 929986404984165500}
   - component: {fileID: 6082093084793716355}
   - component: {fileID: 5677847359904990528}
+  - component: {fileID: 558169531422908302}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -290,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d891dd98ea7589343a5b89092b3ee118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 7332916595710355869}
+  rend: {fileID: 0}
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
   texCam: {fileID: 2335098117953800975}
   isSameColor: 0
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 7332916595710355869}
   resistance: 1
+  startingColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &929986404984165500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,4 +371,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2002811603138692281, guid: e99186f29f668bd43921f7b54eca3762,
     type: 3}
-  testColor: {r: 0.28627452, g: 0.8862746, b: 0.36862746, a: 1}
+--- !u!95 &558169531422908302
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464432111326188171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bde18bf959795ed41a7decef3e7140c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
