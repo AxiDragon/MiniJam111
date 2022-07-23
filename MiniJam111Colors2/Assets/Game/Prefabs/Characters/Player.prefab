@@ -589,6 +589,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 0.5
   cameraTransform: {fileID: 8148147145772517897}
+--- !u!114 &4668883358686210233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348256493292052701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee43a2ba18a62f4d87db056a02f471a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yThreshold: 25
 --- !u!1 &8521242158859016265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
