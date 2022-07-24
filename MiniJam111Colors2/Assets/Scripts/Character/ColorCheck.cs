@@ -8,6 +8,8 @@ public class ColorCheck : MonoBehaviour
     [SerializeField] Renderer rend;
     [SerializeField] RenderTexture textureSettings;
     [SerializeField] Camera texCam;
+    [SerializeField] Color immuneColor;
+
     Material material;
     RenderTexture rt;
     
@@ -15,9 +17,12 @@ public class ColorCheck : MonoBehaviour
     [HideInInspector] public float difference;
     //WebGL needs around 1
     [SerializeField] float errorMargin = 0.1f;
+    float immuneHue = 0f;
 
     void Start()
     {
+        Color.RGBToHSV(immuneColor, out immuneHue, out _, out _);
+
         material = GetColorable();
 
         rt = new RenderTexture(textureSettings);
@@ -40,17 +45,29 @@ public class ColorCheck : MonoBehaviour
     {
         Color newColor = GetColor();
 
-        difference = GetDifference(newColor, material.color);
-        isSameColor = difference < errorMargin; 
+
+        difference = GetDifference(material.color, newColor);
+
+        isSameColor = difference < errorMargin;
     }
 
-    private float GetDifference(Color c1, Color c2)
+    private float GetDifference(Color curC, Color newC)
     {
-        float redDif = Mathf.Abs(c1.r - c2.r);
-        float greenDif = Mathf.Abs(c1.g - c2.g);
-        float blueDif = Mathf.Abs(c1.b - c2.b);
+        float hue1, hue2;
 
-        return redDif + greenDif + blueDif;
+        Color.RGBToHSV(curC, out hue1, out _, out _);
+        Color.RGBToHSV(newC, out hue2, out _, out _);
+
+        if (Mathf.Approximately(hue2, immuneHue))
+            return Mathf.Infinity;
+
+        return Mathf.Abs(hue1 - hue2);
+
+        //float redDif = Mathf.Abs(c1.r - c2.r);
+        //float greenDif = Mathf.Abs(c1.g - c2.g);
+        //float blueDif = Mathf.Abs(c1.b - c2.b);
+
+        //return redDif + greenDif + blueDif;
     }
 
     private Color GetColor()

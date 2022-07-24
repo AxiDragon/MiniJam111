@@ -767,6 +767,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2763386246990923228, guid: 278203f381f74bc428192c3617f608e5,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763386246990923228, guid: 278203f381f74bc428192c3617f608e5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763386246990923228, guid: 278203f381f74bc428192c3617f608e5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.1048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763386246990923228, guid: 278203f381f74bc428192c3617f608e5,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.5
       objectReference: {fileID: 0}
@@ -1045,6 +1060,56 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21cd9621cd40add4c94d07248179d01b, type: 2}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: startingColor.b
+      value: 0.2588235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: startingColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: startingColor.r
+      value: 0.46552026
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1700494845}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulsateHeart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HealthBar, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979185472929889021, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: colorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5994652483531212245, guid: 9534b970d86a6e04aa8e566128c2ffd5,
         type: 3}
       propertyPath: m_IsActive
@@ -1138,6 +1203,21 @@ PrefabInstance:
     - target: {fileID: 8350013504202372820, guid: 9534b970d86a6e04aa8e566128c2ffd5,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840154368682365281, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: difference
+      value: 0.08480209
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840154368682365281, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: errorMargin
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840154368682365281, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: isSameColor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8966804345076465088, guid: 9534b970d86a6e04aa8e566128c2ffd5,
@@ -2190,6 +2270,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546994657684416159, guid: 3bf9f92ce5ff84347969671ffb391c01,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546994657684416159, guid: 3bf9f92ce5ff84347969671ffb391c01,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546994657684416159, guid: 3bf9f92ce5ff84347969671ffb391c01,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.043
       objectReference: {fileID: 0}
     - target: {fileID: 7546994657684416159, guid: 3bf9f92ce5ff84347969671ffb391c01,
         type: 3}
@@ -3407,6 +3502,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1163482544518021731, guid: f0afdf7f3e170494babb400a48791409,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163482544518021731, guid: f0afdf7f3e170494babb400a48791409,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163482544518021731, guid: f0afdf7f3e170494babb400a48791409,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163482544518021731, guid: f0afdf7f3e170494babb400a48791409,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.9
       objectReference: {fileID: 0}
@@ -4562,7 +4672,7 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 29
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4582,128 +4692,129 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[3].content
-      value: ...
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[4].content
       value: Moving mysterious floating circle TALKING donut obstacle obstacle thing
         thing!!!
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[5].content
+      propertyPath: dialogue.Array.data[4].content
       value: u-uhm... you seem to be more sane than the average person here.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[6].content
+      propertyPath: dialogue.Array.data[5].content
       value: have the colors not affected you?
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
+      propertyPath: dialogue.Array.data[6].content
+      value: Uh-uhm... I'm... not sure. A talking disc seems a bit out of the ordinary.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
       propertyPath: dialogue.Array.data[7].content
-      value: WAAA!!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[8].content
-      value: Waa...
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[9].content
-      value: wa
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[10].content
-      value: ok maybe they have
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[11].content
-      value: Uh-uhm... sorry
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[12].content
-      value: T-this isn't what I'm used to, okay?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
-        type: 3}
-      propertyPath: dialogue.Array.data[13].content
       value: I-I think I'm fine, though...
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[14].content
-      value: What do you want from me?
+      propertyPath: dialogue.Array.data[8].content
+      value: But, uh, what do you want from me?
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[15].content
+      propertyPath: dialogue.Array.data[9].content
       value: long story or short story?
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[16].content
+      propertyPath: dialogue.Array.data[10].content
       value: I-I'll take short...
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[17].content
+      propertyPath: dialogue.Array.data[11].content
       value: hold me!
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[18].content
+      propertyPath: dialogue.Array.data[12].content
       value: Uhhhhh...
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[19].content
+      propertyPath: dialogue.Array.data[13].content
       value: I think I'll take the long story, actually.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[20].content
+      propertyPath: dialogue.Array.data[14].content
       value: well...
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[21].content
+      propertyPath: dialogue.Array.data[15].content
       value: we've been trying out new colors, and your town became our test subject.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[22].content
+      propertyPath: dialogue.Array.data[16].content
       value: not only have your people gone mad, but so have ours.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[23].content
+      propertyPath: dialogue.Array.data[17].content
       value: i, uh, was the one who released the colors.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[24].content
+      propertyPath: dialogue.Array.data[18].content
       value: i've been trying to regain the full spectrum of colors, but...
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[25].content
-      value: i've only managed to recover the red and blue colors.
+      propertyPath: dialogue.Array.data[19].content
+      value: i've only managed to recover the red and blue.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[26].content
+      propertyPath: dialogue.Array.data[20].content
       value: gathering the remaining colors would be nearly impossible on my own.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[27].content
+      propertyPath: dialogue.Array.data[21].content
       value: so, i need you to wield me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[22].content
+      value: shoot my segments with a click and let's paint our foes. let's get them
+        merged with the paint on the ground.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[23].content
+      value: be careful that they don't paint you and do the same to you, though.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[24].content
+      value: might be worthwhile checking your color in your peripheral vision.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[25].content
+      value: shoot my segments with a click and let's paint our foes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[26].content
+      value: shoot my segments with a click and let's paint our foes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[27].content
+      value: shoot my segments with a click and let's paint our foes.
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4727,13 +4838,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
+      propertyPath: dialogue.Array.data[4].character
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
       propertyPath: dialogue.Array.data[5].character
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[6].character
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4742,18 +4858,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
-      propertyPath: dialogue.Array.data[10].character
+      propertyPath: dialogue.Array.data[8].character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].character
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
+      propertyPath: dialogue.Array.data[10].character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
       propertyPath: dialogue.Array.data[11].character
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[12].character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[13].character
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[14].character
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4763,7 +4899,7 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[16].character
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4773,7 +4909,12 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[18].character
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+        type: 3}
+      propertyPath: dialogue.Array.data[19].character
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4833,12 +4974,12 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[3].customInterval
-      value: 0.3
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[4].customInterval
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -4933,7 +5074,7 @@ PrefabInstance:
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
       propertyPath: dialogue.Array.data[2].advanceEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403590854965679149, guid: 0fa6fff0b6c42a442867198e70be3bb8,
         type: 3}
@@ -5082,6 +5223,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8bd409230f7bd84bacd8a2e33c75d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1700494845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940017009931710914, guid: 0fa6fff0b6c42a442867198e70be3bb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1700494843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57888f8a572919b4683e818e0bfe7844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1700589161
@@ -5528,11 +5681,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1436419337}
     m_Modifications:
-    - target: {fileID: 355367708474963068, guid: 278203f381f74bc428192c3617f608e5,
-        type: 3}
-      propertyPath: errorMargin
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2763386246990923200, guid: 278203f381f74bc428192c3617f608e5,
         type: 3}
       propertyPath: m_Name

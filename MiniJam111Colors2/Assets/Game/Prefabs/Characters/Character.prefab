@@ -294,10 +294,10 @@ MonoBehaviour:
   rend: {fileID: 0}
   textureSettings: {fileID: 8400000, guid: 8864147a347c1aa408f61a094c3963a2, type: 2}
   texCam: {fileID: 2335098117953800975}
-  logDifference: 0
+  immuneColor: {r: 0.07058824, g: 0.07058824, b: 0.1333333, a: 0}
   isSameColor: 0
   difference: 0
-  errorMargin: 1
+  errorMargin: 0.17
 --- !u!54 &4847030604233058188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   resistance: 0.1
-  startingColor: {r: 1, g: 1, b: 1, a: 1}
+  startingColor: {r: 0.47843137, g: 0.61810535, b: 0.7529412, a: 1}
   colorChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartMenuHandler : MonoBehaviour
@@ -24,5 +25,12 @@ public class StartMenuHandler : MonoBehaviour
         initiatingPlay = true;
         sensitivity = sensitivitySlider.value;
         StartCoroutine(fader.Fade(1f, 1f, 1));
+        StartCoroutine(BackupCoroutine());
+    }
+
+    IEnumerator BackupCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(1);
     }
 }

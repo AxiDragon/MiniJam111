@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] UnityEvent die;
     [SerializeField] bool immortal = false;
+
     bool updatedEnemiesSlain = false;
     ColorCheck colorchecker;
     float maxHealth;
@@ -21,10 +22,16 @@ public class Health : MonoBehaviour
     void Start()
     {
         maxHealth = health;
+        
+        if(CompareTag("Player"))
+            StartCoroutine(ImmunityFrames(.2f));
     }
 
     void FixedUpdate()
     {
+        if (immortal)
+            return;
+
         if (colorchecker.isSameColor)
         {
             TakeDamage(1f);
@@ -34,7 +41,7 @@ public class Health : MonoBehaviour
     private void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0 && !immortal )
+        if (health <= 0)
         {
             health = 0;
             Die();
@@ -95,5 +102,12 @@ public class Health : MonoBehaviour
             updatedEnemiesSlain = true;
             closestCheck.UpdateEnemiesSlain();
         }
+    }
+
+    IEnumerator ImmunityFrames(float time)
+    {
+        immortal = true;
+        yield return new WaitForSeconds(time);
+        immortal = false;
     }
 }

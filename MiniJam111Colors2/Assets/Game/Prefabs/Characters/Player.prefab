@@ -288,6 +288,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4847030604233058188, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4981541244037407543, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: rend
@@ -403,21 +408,6 @@ PrefabInstance:
       propertyPath: meshRenderer
       value: 
       objectReference: {fileID: 7090853980188360177}
-    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
-        type: 3}
-      propertyPath: startingColor.b
-      value: 0.83137256
-      objectReference: {fileID: 0}
-    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
-        type: 3}
-      propertyPath: startingColor.g
-      value: 0.7764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
-        type: 3}
-      propertyPath: startingColor.r
-      value: 0.80784315
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5677847359904990528, guid: 524bf05ee28e29d43bd29ae6a8c934e3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 524bf05ee28e29d43bd29ae6a8c934e3, type: 3}
@@ -551,8 +541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 1.5
-  attackSpeed: 120
   attackCooldown: 2
+  attackSpeed: 120
   attackColor: {r: 0, g: 0, b: 0, a: 0}
   cameraTransform: {fileID: 8148147145772517897}
 --- !u!114 &4668883358686210233

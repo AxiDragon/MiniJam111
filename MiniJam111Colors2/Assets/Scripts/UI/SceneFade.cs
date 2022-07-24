@@ -52,6 +52,11 @@ public class SceneFade : MonoBehaviour
         group.blocksRaycasts = true;
         Cursor.lockState = CursorLockMode.None;
     }
+    
+    public void LampDestroy()
+    {
+        StartCoroutine(Fade(1f, 0.01f));
+    }
 
     public void Restart()
     {

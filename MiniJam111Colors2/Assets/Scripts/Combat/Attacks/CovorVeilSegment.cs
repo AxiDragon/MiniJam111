@@ -22,13 +22,13 @@ public class CovorVeilSegment : MonoBehaviour
     {
         owner = GameObject.FindWithTag("Player").transform;
         rend = GetComponent<MeshRenderer>();
-        attackColor = rend.material.color;
     }
 
     private void Start()
     {
         parent = transform.parent;
         startYRotation = transform.localEulerAngles.y;
+        SetAttackColor();
     }
 
     public void SetAttackColor()
