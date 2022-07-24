@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EpilepsyDisclaimer.unity
+    guid: aee2cea50cacb2a40808cdefbd76e439
+  - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 92a6c761f4659254a800bdc4e62fde62
   - enabled: 1
@@ -14,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LighthouseBase.unity
     guid: ad0725edf838d3247aa20c1f8cd8c9d7
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 8a2b490745436ad4bb35e8833e657303
+  - enabled: 1
+    path: Assets/Scenes/EndingDialogue.unity
+    guid: 844bd0ca290fe954ab6b3d9ba5918759
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: dbc23f3c925de6a469b8f0f41b561c76,
       type: 2}

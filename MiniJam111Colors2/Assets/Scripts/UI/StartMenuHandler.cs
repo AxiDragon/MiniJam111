@@ -31,6 +31,6 @@ public class StartMenuHandler : MonoBehaviour
     IEnumerator BackupCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

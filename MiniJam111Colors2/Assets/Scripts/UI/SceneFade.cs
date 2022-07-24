@@ -7,6 +7,7 @@ using System;
 
 public class SceneFade : MonoBehaviour
 {
+    [SerializeField] bool fadeOnStart = true;
     CanvasGroup group;
     bool restarting = false;
 
@@ -17,7 +18,8 @@ public class SceneFade : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Fade(0f, 2f));
+        if (fadeOnStart)
+            StartCoroutine(Fade(0f, 2f));
     }
 
     public IEnumerator Fade(float targetAlpha, float time)
@@ -44,6 +46,12 @@ public class SceneFade : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public IEnumerator LoadSceneDelayed(float delay, int sceneIndex)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneIndex);
+    }
+
     public void PlayerDeath()
     {
         transform.GetChild(0).gameObject.SetActive(true);
@@ -55,7 +63,8 @@ public class SceneFade : MonoBehaviour
     
     public void LampDestroy()
     {
-        StartCoroutine(Fade(1f, 0.01f));
+        StartCoroutine(Fade(1f, 0.1f));
+        StartCoroutine(LoadSceneDelayed(3f, SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void Restart()

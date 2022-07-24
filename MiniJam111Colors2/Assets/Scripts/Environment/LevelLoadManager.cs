@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelLoadManager : MonoBehaviour
 {
     List<GameObject> levels = new();
+    [SerializeField] bool hideOnStart = true;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class LevelLoadManager : MonoBehaviour
             levels.Add(transform.GetChild(i).gameObject);
 
             if (i > 0)
-                transform.GetChild(i).gameObject.SetActive(false);
+                transform.GetChild(i).gameObject.SetActive(!hideOnStart);
         }
     }
 

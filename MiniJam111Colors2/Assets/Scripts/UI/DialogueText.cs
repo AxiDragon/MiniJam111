@@ -14,6 +14,7 @@ public class DialogueText : MonoBehaviour
     [SerializeField] DialogueSegment[] dialogue;
     [SerializeField] UnityEvent finishEvent;
     [SerializeField] float characterInterval = .05f;
+    [SerializeField] bool showAtStart = false;
     bool canInteract = true;
     RectTransform rectTransform;
     RectTransform displayTransform;
@@ -53,7 +54,16 @@ public class DialogueText : MonoBehaviour
 
         rectTransform = hideTransform;
 
-        gameObject.SetActive(false);
+        if (!showAtStart)
+            gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (showAtStart)
+        {
+            ShowDialogue();
+        }
     }
 
     private void DisplayText()
@@ -153,12 +163,12 @@ public class DialogueText : MonoBehaviour
 
     public void CloseDialogue()
     {
-        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * -400f, 1f).setEase(LeanTweenType.easeInOutCubic).setOnComplete(closeAction);
+        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * -600f, 1f).setEase(LeanTweenType.easeInOutCubic).setOnComplete(closeAction);
     }
 
     public void ShowDialogue()
     {
-        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * 400f, 1f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.move(rectTransform, rectTransform.position + rectTransform.up * 600f, 1f).setEase(LeanTweenType.easeInOutCubic);
         DisplayText();
     }
 }

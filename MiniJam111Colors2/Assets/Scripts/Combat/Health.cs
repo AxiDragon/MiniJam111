@@ -8,11 +8,17 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float health;
     [SerializeField] UnityEvent die;
-    [SerializeField] bool immortal = false;
+    [SerializeField] AudioSource sink;
+    public bool immortal = false;
 
+    bool deathInvoked = false;
+    bool alive = true;
     bool updatedEnemiesSlain = false;
     ColorCheck colorchecker;
     float maxHealth;
+
+    float sinkCooldown = 2f;
+    float timeSinceLastSink = Mathf.Infinity;
 
     private void Awake()
     {
@@ -25,6 +31,11 @@ public class Health : MonoBehaviour
         
         if(CompareTag("Player"))
             StartCoroutine(ImmunityFrames(.2f));
+    }
+
+    private void Update()
+    {
+        timeSinceLastSink += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -40,6 +51,12 @@ public class Health : MonoBehaviour
 
     private void TakeDamage(float amount)
     {
+        if (timeSinceLastSink > sinkCooldown && alive)
+        {
+            sink.Play();
+            timeSinceLastSink = 0;
+        }
+
         health -= amount;
         if (health <= 0)
         {
@@ -60,12 +77,18 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        alive = false;
+
         foreach(Collider coll in GetComponentsInChildren<Collider>())
         {
             coll.enabled = false;
         }
 
-        die.Invoke();
+        if (!deathInvoked)
+        {
+            die.Invoke();
+            deathInvoked = true;
+        }
 
         if (CompareTag("Enemy"))
         {

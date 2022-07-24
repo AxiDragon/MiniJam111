@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TeleportDoor : MonoBehaviour
 {
+    AudioSource teleportSound;
     public int currentLevel = 1;
     public Transform teleportLocation;
     public TeleportType type;
@@ -21,6 +22,7 @@ public class TeleportDoor : MonoBehaviour
 
     private void Awake()
     {
+        teleportSound = GameObject.FindWithTag("TeleportSound").GetComponent<AudioSource>();
         levelLoadManager = FindObjectOfType<LevelLoadManager>();
     }
 
@@ -55,6 +57,7 @@ public class TeleportDoor : MonoBehaviour
     IEnumerator Teleport(GameObject player)
     {
         SceneFade fader = FindObjectOfType<SceneFade>();
+        teleportSound.Play();
 
         levelLoadManager.ChangeLevelState(currentLevel + 1, true);
 
