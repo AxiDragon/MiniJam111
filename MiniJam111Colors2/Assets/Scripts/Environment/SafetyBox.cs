@@ -16,6 +16,7 @@ public class SafetyBox : MonoBehaviour
         if (other.tag == "Player")
         {
             playerHealth.immortal = true;
+            playerHealth.Heal(1f);
         }
     }
 

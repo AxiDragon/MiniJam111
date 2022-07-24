@@ -11,6 +11,7 @@ public class PlayerFighter : MonoBehaviour
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] Color attackColor;
     [SerializeField] Transform cameraTransform;
+    public AudioSource attackAudio;
     float timeSinceLastAttack = Mathf.Infinity;
     //Animator animator;
     IAttack attack;
@@ -26,7 +27,6 @@ public class PlayerFighter : MonoBehaviour
         if (callback.action.WasPerformedThisFrame() && timeSinceLastAttack > attackCooldown)
         {
             attack.Attack(attackDamage, attackSpeed, attackColor, cameraTransform, tag);
-
             //animator.SetTrigger("Attack");
         }
     }

@@ -29,8 +29,7 @@ public class Health : MonoBehaviour
     {
         maxHealth = health;
         
-        if(CompareTag("Player"))
-            StartCoroutine(ImmunityFrames(.2f));
+        StartCoroutine(ImmunityFrames(.2f));
     }
 
     private void Update()
@@ -70,7 +69,7 @@ public class Health : MonoBehaviour
         return health / maxHealth;
     }
 
-    private void Heal(float amount)
+    public void Heal(float amount)
     {
         health = Mathf.Min(health + amount, maxHealth);
     }

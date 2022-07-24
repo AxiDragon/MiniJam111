@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioPlayOffset : MonoBehaviour
 {
-    float offset = 0f;
+    [SerializeField] float offset = 0f;
     [SerializeField] AudioSource audioSource;
 
     public void PlayAudio()

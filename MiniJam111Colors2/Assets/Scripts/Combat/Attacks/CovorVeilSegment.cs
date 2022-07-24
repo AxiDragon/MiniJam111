@@ -8,6 +8,7 @@ public class CovorVeilSegment : MonoBehaviour
     [HideInInspector] public Color attackColor;
     [SerializeField] HitParticle hitEffect;
     [HideInInspector] public MeshRenderer rend;
+    AudioSource attackAudio;
     Transform owner;
     Transform parent;
     bool attacking = false;
@@ -21,6 +22,7 @@ public class CovorVeilSegment : MonoBehaviour
     void Awake()
     {
         owner = GameObject.FindWithTag("Player").transform;
+        attackAudio = owner.GetComponent<PlayerFighter>().attackAudio;
         rend = GetComponent<MeshRenderer>();
     }
 
@@ -60,6 +62,8 @@ public class CovorVeilSegment : MonoBehaviour
 
     IEnumerator LaunchSegment()
     {
+        attackAudio.Play();
+
         PreparePosition();
 
         attacking = true;

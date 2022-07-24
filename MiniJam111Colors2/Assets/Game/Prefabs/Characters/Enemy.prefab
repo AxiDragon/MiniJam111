@@ -225,6 +225,7 @@ MonoBehaviour:
   attackDamage: 1
   attackCooldown: 1
   projectileSpeed: 0.2
+  attackAudio: {fileID: 4449613657166742595}
   range: 5
   hasEvent: 1
 --- !u!195 &2853042577121487413
@@ -264,3 +265,9 @@ MonoBehaviour:
   chaseDistance: 12
   wanderRadius: 5
   wanderTime: 10
+--- !u!82 &4449613657166742595 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7413456245284882087, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6566766292127040228}
+  m_PrefabAsset: {fileID: 0}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CovorVeilSegmentGetter : MonoBehaviour
 {
-    [SerializeField] bool hideOnStart = false;
+    public bool hideOnStart = false;
+    [HideInInspector] public bool yellowAtStart = false;
     [SerializeField] Material red;
     [SerializeField] Material orange;
     [SerializeField] Material yellow;
@@ -23,12 +24,12 @@ public class CovorVeilSegmentGetter : MonoBehaviour
                 veilSegments.Add(segment);
             }
         }
-    }
 
-    private void Start()
-    {
         if (hideOnStart)
             HideSegments();
+
+        if (yellowAtStart)
+            UpdateSegmentColor("Yellow");
     }
 
     public CovorVeilSegment GetCovorVeilSegment()
@@ -81,13 +82,14 @@ public class CovorVeilSegmentGetter : MonoBehaviour
                 {
                     segment.rend.material = newMaterial;
                     segment.SetAttackColor();
+                    segment.GetComponentInChildren<SetTrailColor>().SetColor();
                 }
             }
         }
 
         FindObjectOfType<PlayerFighter>().attackDamage += 1f;
         FindObjectOfType<PlayerFighter>().attackCooldown -= .4f;
-        GetComponent<CovorVeilMovement>().rotationSpeed += .5f;
+        GetComponent<CovorVeilMovement>().rotationSpeed += .1f;
     }
 
     public void HideSegments()

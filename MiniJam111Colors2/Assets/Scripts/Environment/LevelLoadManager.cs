@@ -5,8 +5,38 @@ using UnityEngine;
 
 public class LevelLoadManager : MonoBehaviour
 {
-    List<GameObject> levels = new();
+    [HideInInspector] public List<GameObject> levels = new();
+
     [SerializeField] bool hideOnStart = true;
+    [SerializeField] Transform[] checkpoints;
+    public static int checkpoint = 0;
+
+    private void Awake()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+
+        for (int i = 0; i < checkpoints.Length; i++)
+        {
+            if (i == checkpoint)
+            {
+                player.transform.position = checkpoints[i].position;
+                CovorVeilSegmentGetter getter = player.GetComponentInChildren<CovorVeilSegmentGetter>();
+
+                switch (i)
+                {
+                    case 1: 
+                        getter.hideOnStart = false;
+                        break;
+                    case 2: 
+                        getter.hideOnStart = false;
+                        getter.yellowAtStart = true;
+                        break;
+                    default: break;
+                }
+            }
+
+        }
+    }
 
     void Start()
     {
@@ -19,13 +49,20 @@ public class LevelLoadManager : MonoBehaviour
         {
             levels.Add(transform.GetChild(i).gameObject);
 
-            if (i > 0)
-                transform.GetChild(i).gameObject.SetActive(!hideOnStart);
+            if (i != checkpoint * 6 && hideOnStart)
+                transform.GetChild(i).gameObject.SetActive(false);
+            else
+                transform.GetChild(i).gameObject.SetActive(true);
         }
     }
 
     public void ChangeLevelState(int level, bool show)
     {
         levels[level].SetActive(show);
+    }
+
+    public void CheckpointReached(int checkpointValue)
+    {
+        checkpoint = checkpointValue;
     }
 }

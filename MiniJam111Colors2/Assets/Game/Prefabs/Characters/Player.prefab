@@ -300,6 +300,11 @@ PrefabInstance:
       objectReference: {fileID: 7090853980188360177}
     - target: {fileID: 4981541244037407543, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
+      propertyPath: errorMargin
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981541244037407543, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
       propertyPath: meshRenderer
       value: 
       objectReference: {fileID: 7090853980188360177}
@@ -328,6 +333,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7413456245284882087, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413456245284882087, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 19e52a74bbd1d7441a2a93b0b29aacdd, type: 3}
     - target: {fileID: 7464432111326188171, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Name
@@ -545,6 +560,7 @@ MonoBehaviour:
   attackSpeed: 120
   attackColor: {r: 0, g: 0, b: 0, a: 0}
   cameraTransform: {fileID: 8148147145772517897}
+  attackAudio: {fileID: 6444255229129782513}
 --- !u!114 &4668883358686210233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +623,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 0.5
   cameraTransform: {fileID: 8148147145772517897}
+--- !u!82 &6444255229129782513 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7413456245284882087, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4580007789541241430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8521242158859016265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,

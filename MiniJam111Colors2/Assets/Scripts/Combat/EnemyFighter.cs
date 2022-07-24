@@ -8,6 +8,7 @@ public class EnemyFighter : MonoBehaviour
     [SerializeField] float attackDamage = 1f;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] float projectileSpeed = .2f;
+    [SerializeField] AudioSource attackAudio;
     ColorCheck checkColor;
     Animator animator;
     public float range = 5f;
@@ -70,6 +71,7 @@ public class EnemyFighter : MonoBehaviour
 
     private void LaunchAttack()
     {
+        attackAudio.Play();
         attack.Attack(attackDamage, projectileSpeed, checkColor.GetMaterialColor(), transform, tag);
         timeSinceLastAttack = 0f;
     }

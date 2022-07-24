@@ -200,9 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GAME OVER!
-
-    AT LEAST YOU WON''T HAVE TO LIE ABOUT BEING BLIND NOW!'
+  m_text: GAME OVER!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27a8928ca25cffe4580f344c5d3def3d, type: 2}
   m_sharedMaterial: {fileID: -4907611093083605477, guid: 27a8928ca25cffe4580f344c5d3def3d,
@@ -511,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bd409230f7bd84bacd8a2e33c75d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOnStart: 1
 --- !u!1 &7567340090167818117
 GameObject:
   m_ObjectHideFlags: 0

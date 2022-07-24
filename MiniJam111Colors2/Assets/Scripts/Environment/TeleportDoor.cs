@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeleportDoor : MonoBehaviour
 {
@@ -59,11 +60,17 @@ public class TeleportDoor : MonoBehaviour
         SceneFade fader = FindObjectOfType<SceneFade>();
         teleportSound.Play();
 
-        levelLoadManager.ChangeLevelState(currentLevel + 1, true);
+        bool inScene = currentLevel + 1 < levelLoadManager.levels.Count;
+
+        if (inScene)
+            levelLoadManager.ChangeLevelState(currentLevel + 1, true);
 
         yield return fader.Fade(1f, .2f);
         
-        player.transform.position = GetTeleportLocation();
+        if (inScene)
+            player.transform.position = GetTeleportLocation();
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         yield return fader.Fade(0f, .2f);
 

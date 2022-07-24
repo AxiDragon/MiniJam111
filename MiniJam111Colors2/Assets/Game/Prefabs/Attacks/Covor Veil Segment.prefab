@@ -101,6 +101,7 @@ MonoBehaviour:
   attackDamage: 2
   attackColor: {r: 0, g: 0, b: 0, a: 0}
   hitEffect: {fileID: 61595482913440415, guid: 93c41d0c35a973647b9b43a2cb235a48, type: 3}
+  rend: {fileID: 0}
   attackTime: 0.5
   attackSpeed: 240
   attackCooldown: 2
@@ -179,6 +180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384306798213715743, guid: 36642b22770e67f40aca8c4ff57c618e,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7963773360931631655, guid: 36642b22770e67f40aca8c4ff57c618e,
         type: 3}
