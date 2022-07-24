@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1758034988260910440, guid: 7ad4a330093abd74dad3e8620e0f37a8,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2161774519142015443, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: rend
@@ -106,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 2853042577121487413, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 8.19
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3915024959020468815, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}

@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   velocitySpeed: 0.005
-  rotationSpeed: -2
+  rotationSpeed: 1
 --- !u!114 &7957244952044768972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +66,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5809f9c84f758d4989907dfb3d7c5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideOnStart: 0
+  red: {fileID: 2100000, guid: e94b6c1a78770b94e8ad139c0e140633, type: 2}
+  orange: {fileID: 2100000, guid: 3232da0710c570c4c9e9d4711881f06d, type: 2}
+  yellow: {fileID: 2100000, guid: 731cc172ddb4fd34ea72ca07b359db21, type: 2}
+  green: {fileID: 2100000, guid: b1bc1e0eb3a96ec46983163d38b04d76, type: 2}
+  blue: {fileID: 2100000, guid: 21cd9621cd40add4c94d07248179d01b, type: 2}
+  purple: {fileID: 2100000, guid: 716813dcc06bb40479c43ba0f3aabecb, type: 2}
 --- !u!1001 &1186131548631312706
 PrefabInstance:
   m_ObjectHideFlags: 0

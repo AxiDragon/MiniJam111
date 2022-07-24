@@ -10,7 +10,6 @@ public class LevelCompletionCheck : MonoBehaviour
     bool eventTriggered = false;
 
     public int enemiesRequired = 1;
-    public int currentLevel = 1;
     public TeleportDoor door;
     int enemiesSlain = 0;
 

@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerFighter : MonoBehaviour
 {
-    [SerializeField] float attackDamage = 1.5f;
+    public float attackDamage = 1.5f;
+    public float attackCooldown = 2f;
     [SerializeField] float attackSpeed = 1f;
-    [SerializeField] float attackCooldown = 2f;
     [SerializeField] Color attackColor;
     [SerializeField] Transform cameraTransform;
     float timeSinceLastAttack = Mathf.Infinity;

@@ -7,7 +7,7 @@ public class CovorVeilSegment : MonoBehaviour
     [HideInInspector] public float attackDamage = 2f;
     [HideInInspector] public Color attackColor;
     [SerializeField] HitParticle hitEffect;
-    MeshRenderer rend;
+    [HideInInspector] public MeshRenderer rend;
     Transform owner;
     Transform parent;
     bool attacking = false;
@@ -31,15 +31,17 @@ public class CovorVeilSegment : MonoBehaviour
         startYRotation = transform.localEulerAngles.y;
     }
 
-    public void SetColor(Color color)
+    public void SetAttackColor()
     {
-        rend.material.color = color;
-        attackColor = color;
+        attackColor = rend.material.color;
     }
 
     [ContextMenu("Launch")]
     public void Launch(float attackDamage, float attackSpeed, Transform attackDirection)
     {
+        if (!gameObject.activeInHierarchy)
+            return;
+
         if (attacking)
             return;
 
@@ -82,6 +84,7 @@ public class CovorVeilSegment : MonoBehaviour
 
     public IEnumerator SegmentCooldown()
     {
+        attacking = true;
         ResetSegment();
         yield return new WaitForSeconds(attackCooldown);
         rend.enabled = true;
@@ -107,7 +110,7 @@ public class CovorVeilSegment : MonoBehaviour
                 colorChange.BlendColor(attackColor, attackDamage);
             }
 
-            if (attacking)
+            if (attacking && attackRoutine != null)
             {
                 StopCoroutine(attackRoutine);
             }

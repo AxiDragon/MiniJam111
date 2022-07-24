@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 4847030604233058188, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
       propertyPath: m_Mass
-      value: 2000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5318465600568125983, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}
@@ -161,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
+        type: 3}
+      propertyPath: resistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7887246965527398571, guid: 524bf05ee28e29d43bd29ae6a8c934e3,
         type: 3}

@@ -60,7 +60,10 @@ public class Health : MonoBehaviour
 
         die.Invoke();
 
-        Destroy(gameObject, 4f);
+        if (CompareTag("Enemy"))
+        {
+            Destroy(gameObject, 4f);
+        }
 
         if (updatedEnemiesSlain)
             return;
@@ -88,8 +91,9 @@ public class Health : MonoBehaviour
         }
         
         if (closestCheck != null)
+        {
             updatedEnemiesSlain = true;
-
-        closestCheck.UpdateEnemiesSlain();
+            closestCheck.UpdateEnemiesSlain();
+        }
     }
 }

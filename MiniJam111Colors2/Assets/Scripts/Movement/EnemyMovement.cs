@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     float timeSinceLastWander = 0f;
     bool alive = true;
-    //bool chasing = false;
     NavMeshAgent agent;
     Transform player;
     Animator animator;

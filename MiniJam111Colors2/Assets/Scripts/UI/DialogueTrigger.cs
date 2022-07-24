@@ -16,9 +16,14 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.CompareTag(triggerTag))
         {
-            dialogue.gameObject.SetActive(true);
-            dialogue.ShowDialogue();
-            triggered = true;
+            TriggerDialogue();
         }
+    }
+
+    public void TriggerDialogue()
+    {
+        dialogue.gameObject.SetActive(true);
+        dialogue.ShowDialogue();
+        triggered = true;
     }
 }

@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 1453494964373114777, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: range
-      value: 6.59
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1453494964373114777, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
@@ -223,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 2853042577121487413, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3915024959020468815, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
@@ -298,7 +298,7 @@ PrefabInstance:
     - target: {fileID: 5954786331380181262, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}
       propertyPath: chaseDistance
-      value: 14.23
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6674003822569151850, guid: 7ad4a330093abd74dad3e8620e0f37a8,
         type: 3}

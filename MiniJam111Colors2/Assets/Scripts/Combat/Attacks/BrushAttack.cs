@@ -25,7 +25,6 @@ public class BrushAttack : MonoBehaviour, IAttack
 
     void SpawnParticle(Color attackColor)
     {
-                print("Aye");
         HitParticle particle = Instantiate(hitEffect, hitPosition.position, Quaternion.identity);
         particle.Activate(attackColor);
     }

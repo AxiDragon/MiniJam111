@@ -5,6 +5,13 @@ using UnityEngine;
 public class CovorVeilSegmentGetter : MonoBehaviour
 {
     [SerializeField] bool hideOnStart = false;
+    [SerializeField] Material red;
+    [SerializeField] Material orange;
+    [SerializeField] Material yellow;
+    [SerializeField] Material green;
+    [SerializeField] Material blue;
+    [SerializeField] Material purple;
+
     List<CovorVeilSegment> veilSegments = new();
 
     private void Awake()
@@ -40,6 +47,47 @@ public class CovorVeilSegmentGetter : MonoBehaviour
         }
 
         return veilSegments[0];
+    }
+
+    public void UpdateSegmentColor(string colorName)
+    {
+        List<string> colors = new List<string>();
+        Material newMaterial = red;
+
+        colors.Add(colorName);
+
+        switch (colorName)
+        {
+            case "Green":
+                newMaterial = green;
+                break;
+            case "Purple":
+                newMaterial = purple;
+                break;
+            case "Orange":
+                newMaterial = orange;
+                break;
+            case "Yellow":
+                newMaterial = yellow;
+                colors.Add("Orange");
+                break;
+        }
+
+        foreach(string color in colors)
+        {
+            foreach(CovorVeilSegment segment in veilSegments)
+            {
+                if (segment.name == color)
+                {
+                    segment.rend.material = newMaterial;
+                    segment.SetAttackColor();
+                }
+            }
+        }
+
+        FindObjectOfType<PlayerFighter>().attackDamage += 1f;
+        FindObjectOfType<PlayerFighter>().attackCooldown -= .4f;
+        GetComponent<CovorVeilMovement>().rotationSpeed += .5f;
     }
 
     public void HideSegments()
