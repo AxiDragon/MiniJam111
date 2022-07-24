@@ -9,6 +9,7 @@ public class TeleportDoor : MonoBehaviour
     public Transform teleportLocation;
     public TeleportType type;
     public bool canTeleport;
+    LevelLoadManager levelLoadManager;
 
     private bool entered = false;
 
@@ -16,6 +17,11 @@ public class TeleportDoor : MonoBehaviour
     {
         Enter,
         Exit
+    }
+
+    private void Awake()
+    {
+        levelLoadManager = FindObjectOfType<LevelLoadManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,7 +32,7 @@ public class TeleportDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             entered = true;
-            StartCoroutine(Teleport(other.gameObject, GetTeleportLocation()));
+            StartCoroutine(Teleport(other.gameObject));
         }
     }
 
@@ -46,14 +52,18 @@ public class TeleportDoor : MonoBehaviour
         return teleportLocation.position;
     }
 
-    IEnumerator Teleport(GameObject player, Vector3 location)
+    IEnumerator Teleport(GameObject player)
     {
         SceneFade fader = FindObjectOfType<SceneFade>();
-        
+
+        levelLoadManager.ChangeLevelState(currentLevel + 1, true);
+
         yield return fader.Fade(1f, .2f);
         
-        player.transform.position = location;
+        player.transform.position = GetTeleportLocation();
 
         yield return fader.Fade(0f, .2f);
+
+        levelLoadManager.ChangeLevelState(currentLevel, false);
     }
 }

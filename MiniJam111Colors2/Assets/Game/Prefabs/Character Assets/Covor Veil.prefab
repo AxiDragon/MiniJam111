@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   velocitySpeed: 0.005
-  rotationSpeed: 1
+  rotationSpeed: 2
 --- !u!114 &7957244952044768972
 MonoBehaviour:
   m_ObjectHideFlags: 0

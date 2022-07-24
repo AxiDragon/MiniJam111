@@ -102,5 +102,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8840154368682365281, guid: 9534b970d86a6e04aa8e566128c2ffd5,
+        type: 3}
+      propertyPath: errorMargin
+      value: -0.39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9534b970d86a6e04aa8e566128c2ffd5, type: 3}

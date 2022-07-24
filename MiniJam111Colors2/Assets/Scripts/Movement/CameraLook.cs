@@ -11,6 +11,7 @@ public class CameraLook : MonoBehaviour
 
     void Start()
     {
+        sensitivity *= StartMenuHandler.sensitivity;
         Cursor.lockState = CursorLockMode.Locked;
     }
 

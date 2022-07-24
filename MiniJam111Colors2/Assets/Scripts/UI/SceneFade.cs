@@ -8,10 +8,15 @@ using System;
 public class SceneFade : MonoBehaviour
 {
     CanvasGroup group;
+    bool restarting = false;
 
     private void Awake()
     {
         group = GetComponent<CanvasGroup>();
+    }
+
+    private void Start()
+    {
         StartCoroutine(Fade(0f, 2f));
     }
 
@@ -37,5 +42,23 @@ public class SceneFade : MonoBehaviour
         group.alpha = targetAlpha;
 
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void PlayerDeath()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+        StartCoroutine(Fade(1f, .3f));
+        group.interactable = true;
+        group.blocksRaycasts = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Restart()
+    {
+        if (restarting)
+            return;
+
+        restarting = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

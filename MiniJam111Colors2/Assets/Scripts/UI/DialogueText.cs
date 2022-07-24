@@ -14,6 +14,7 @@ public class DialogueText : MonoBehaviour
     [SerializeField] DialogueSegment[] dialogue;
     [SerializeField] UnityEvent finishEvent;
     [SerializeField] float characterInterval = .05f;
+    bool canInteract = true;
     RectTransform rectTransform;
     RectTransform displayTransform;
     RectTransform hideTransform;
@@ -74,6 +75,9 @@ public class DialogueText : MonoBehaviour
 
     public void AdvanceDialogue(InputAction.CallbackContext callback)
     {
+        if (!canInteract)
+            return;
+
         if (callback.action.WasPerformedThisFrame())
         {
             if (timer != null)
@@ -89,6 +93,9 @@ public class DialogueText : MonoBehaviour
 
     public void RetractDialogue(InputAction.CallbackContext callback)
     {
+        if (!canInteract)
+            return;
+
         if (callback.action.WasPerformedThisFrame())
         {
             if (timer != null)
@@ -107,6 +114,7 @@ public class DialogueText : MonoBehaviour
         if (currentDialogue >= dialogueLength)
         {
             finishEvent.Invoke();
+            canInteract = false;
             return false;
         }
 
@@ -123,7 +131,7 @@ public class DialogueText : MonoBehaviour
 
     IEnumerator AdvanceTimerCoroutine(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
         dialogue[currentDialogue].advanceEvent.Invoke();
         currentDialogue++;
 
@@ -139,7 +147,7 @@ public class DialogueText : MonoBehaviour
         {
             textString += text[i];
             content.text = textString;
-            yield return new WaitForSeconds(interval);
+            yield return new WaitForSecondsRealtime(interval);
         }
     }
 

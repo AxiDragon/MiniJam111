@@ -12,6 +12,8 @@ public class ColorCheck : MonoBehaviour
     RenderTexture rt;
     
     [HideInInspector] public bool isSameColor;
+    [HideInInspector] public float difference;
+    //WebGL needs around 1
     [SerializeField] float errorMargin = 0.1f;
 
     void Start()
@@ -38,7 +40,7 @@ public class ColorCheck : MonoBehaviour
     {
         Color newColor = GetColor();
 
-        float difference = GetDifference(newColor, material.color);
+        difference = GetDifference(newColor, material.color);
         isSameColor = difference < errorMargin; 
     }
 
