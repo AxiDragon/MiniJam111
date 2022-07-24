@@ -16,7 +16,7 @@ public class LightHouseEntrance : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggered = true;   
-            StartCoroutine(FindObjectOfType<SceneFade>().Fade(1f, targetScene));
+            StartCoroutine(FindObjectOfType<SceneFade>().Fade(1f, 2f, targetScene));
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CovorVeilSegmentGetter : MonoBehaviour
 {
+    [SerializeField] bool hideOnStart = false;
     List<CovorVeilSegment> veilSegments = new();
 
     private void Awake()
@@ -15,6 +16,12 @@ public class CovorVeilSegmentGetter : MonoBehaviour
                 veilSegments.Add(segment);
             }
         }
+    }
+
+    private void Start()
+    {
+        if (hideOnStart)
+            HideSegments();
     }
 
     public CovorVeilSegment GetCovorVeilSegment()
@@ -33,5 +40,29 @@ public class CovorVeilSegmentGetter : MonoBehaviour
         }
 
         return veilSegments[0];
+    }
+
+    public void HideSegments()
+    {
+        for (int i = 0; i < veilSegments.Count; i++)
+        {
+            veilSegments[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowSegments()
+    {
+        for (int i = 0; i < veilSegments.Count; i++)
+        {
+            veilSegments[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void ResetSegments()
+    {
+        for (int i = 0; i < veilSegments.Count; i++)
+        {
+            StartCoroutine(veilSegments[i].SegmentCooldown());
+        }
     }
 }

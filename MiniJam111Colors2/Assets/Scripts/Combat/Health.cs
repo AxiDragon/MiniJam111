@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] UnityEvent die;
     [SerializeField] bool immortal = false;
+    bool updatedEnemiesSlain = false;
     ColorCheck colorchecker;
     float maxHealth;
 
@@ -33,8 +34,7 @@ public class Health : MonoBehaviour
     private void TakeDamage(float amount)
     {
         health -= amount;
-        print("Ouchie!");
-        if (health <= 0 && !immortal)
+        if (health <= 0 && !immortal )
         {
             health = 0;
             Die();
@@ -60,6 +60,36 @@ public class Health : MonoBehaviour
 
         die.Invoke();
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 4f);
+
+        if (updatedEnemiesSlain)
+            return;
+
+        if (CompareTag("Enemy"))
+        {
+            UpdateEnemiesSlain();
+        }
+    }
+
+    private void UpdateEnemiesSlain()
+    {
+        float closestDistance = Mathf.Infinity;
+        LevelCompletionCheck closestCheck = null;
+
+        foreach (LevelCompletionCheck check in FindObjectsOfType<LevelCompletionCheck>())
+        {
+            float distance = Vector3.Distance(check.transform.position, transform.position);
+            
+            if (distance < closestDistance)
+            {
+                closestCheck = check;
+                closestDistance = distance;
+            }
+        }
+        
+        if (closestCheck != null)
+            updatedEnemiesSlain = true;
+
+        closestCheck.UpdateEnemiesSlain();
     }
 }

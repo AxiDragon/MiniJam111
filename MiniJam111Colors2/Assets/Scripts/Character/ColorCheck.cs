@@ -39,7 +39,6 @@ public class ColorCheck : MonoBehaviour
         Color newColor = GetColor();
 
         float difference = GetDifference(newColor, material.color);
-        print(difference);
         isSameColor = difference < errorMargin; 
     }
 

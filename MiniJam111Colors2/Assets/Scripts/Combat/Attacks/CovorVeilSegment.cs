@@ -80,7 +80,7 @@ public class CovorVeilSegment : MonoBehaviour
         transform.parent = null;
     }
 
-    IEnumerator SegmentCooldown()
+    public IEnumerator SegmentCooldown()
     {
         ResetSegment();
         yield return new WaitForSeconds(attackCooldown);
@@ -89,7 +89,7 @@ public class CovorVeilSegment : MonoBehaviour
         attacking = false;
     }
 
-    private void ResetSegment()
+    public void ResetSegment()
     {
         transform.parent = parent;
         transform.localEulerAngles = Vector3.up * startYRotation;

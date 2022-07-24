@@ -12,25 +12,25 @@ public class SceneFade : MonoBehaviour
     private void Awake()
     {
         group = GetComponent<CanvasGroup>();
-        StartCoroutine(Fade(0f));
+        StartCoroutine(Fade(0f, 2f));
     }
 
-    public IEnumerator Fade(float targetAlpha)
+    public IEnumerator Fade(float targetAlpha, float time)
     {
         while (!Mathf.Approximately(targetAlpha, group.alpha))
         {
-            group.alpha = Mathf.MoveTowards(group.alpha, targetAlpha, Time.deltaTime);
+            group.alpha = Mathf.MoveTowards(group.alpha, targetAlpha, Time.deltaTime / time);
             yield return null;
         }
 
         group.alpha = targetAlpha;
     }
 
-    public IEnumerator Fade(float targetAlpha, int sceneIndex)
+    public IEnumerator Fade(float targetAlpha, float time, int sceneIndex)
     {
         while (!Mathf.Approximately(targetAlpha, group.alpha))
         {
-            group.alpha = Mathf.MoveTowards(group.alpha, targetAlpha, Time.deltaTime);
+            group.alpha = Mathf.MoveTowards(group.alpha, targetAlpha, Time.deltaTime / time);
             yield return null;
         }
 

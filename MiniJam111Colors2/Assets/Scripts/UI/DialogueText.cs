@@ -37,7 +37,8 @@ public class DialogueText : MonoBehaviour
     enum Character
     {
         Clover,
-        Radio
+        Radio,
+        Covorveil
     }
 
     private void Awake()

@@ -9,6 +9,9 @@ public class CovorVeilAttack : MonoBehaviour, IAttack
 
     public void Attack(float damage, float speed, Color attackColor, Transform direction, string factionTag)
     {
+        if (!segmentGetter.enabled)
+            return;
+
         CovorVeilSegment segment = segmentGetter.GetCovorVeilSegment();
         segment.Launch(damage, speed, direction);
     }
